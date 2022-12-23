@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{width:100%; height:80px; border:1px solid red;}
+        .he1{width:30%; height:80vh; border:1px solid red;
+            float:left;
+        }
+        .he2{width:100%; height:80vh;border:1px solid red;
+        }
+        footer{
+            width:100%; height:10vh;border:1px solid red;
+            clear:left;
+        }
+        ul{
+            display:inline-flex;
+            list-style-type:none;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Float 속성을 사용해서 레이아웃 실습
+            레이아웃 잡을때 border 1px solid red;
+    -->
+
+    <header> 머릿고기 먹고싶다.
+        <nav>메뉴 넣음
+            <ul>
+                <li>1</li>
+                <li>2</li>
+            </ul>
+        </nav>
+    </header>       <!-- width:100% height:10% -->
+
+    <section class="he1">
+        머릿고기 만드는법
+        <article> 머릿고기 만드는법1</article>
+        <article> 머릿고기 만드는법2</article>
+    </section>     <!-- 왼쪽 width:30%  height:10% -->
+    <section class="he2"> 머릿고기 주문하기
+        <article> 머리1 </article>
+        <article> 머리2 </article>
+    </section>    <!-- 중앙 (main)width:70%  height:80% -->
+
+    <footer> 머릿고기 맛있다. </footer>       <!-- width:100%  height:10% -->
+
+</body>
+</html>
