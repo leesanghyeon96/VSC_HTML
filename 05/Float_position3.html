@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:1px solid red;
+            
+            width:200px;    /* width 값을 주지 않으면 전체로 출력되서 옆에 붙지 않음 */
+            margin:1px;
+            float:left;
+        }
+        .div1{overflow:auto;}
+        .div2{width:500px;   
+            overflow:auto;
+        } 
+        .div3{       /* clear를 적절히 사용해 줄을 바꿀 수 있다. */
+            clear:left;
+        }
+        .div4{width:500px}
+    </style>
+</head>
+<body>
+    <h3> Float 을 사용하면서 clear 를 적절하게 사용해야한다. </h3>
+    <div class="div1"><img src="../img-04/pic1.jpg"></div>
+    <div class="div2">div 2 - NS에 '용도변경 조건으로 광고비를 받았다고 가정해도 이재명 개인이 아닌 성남시민의 이익이 되니 이론적으로 뇌물이 될 수 없
+        NS에 '용도변경 조건으로 광고비를 받았다고 가정해도 이재명 개인이 아닌 성남시민의 이익이 되니 이론적으로 뇌물이 될 수 없
+        NS에 '용도변경 조건으로 광고비를 받았다고 가정해도 이재명 개인이 아닌 성남시민의 이익이 되니 이론적으로 뇌물이 될 수 없
+    </div>
+    <div class="div3"><img src="../img-04/pic2.jpg"></div>
+    <div class="div4">div 4 - NS에 '용도변경 조건으로 광고비를 받았다고 가정해도 이재명 개인이 아닌 성남시민의 이익이 되니 이론적으로 뇌물이 될 수 없
+        NS에 '용도변경 조건으로 광고비를 받았다고 가정해도 이재명 개인이 아닌 성남시민의 이익이 되니 이론적으로 뇌물이 될 수 없
+        NS에 '용도변경 조건으로 광고비를 받았다고 가정해도 이재명 개인이 아닌 성남시민의 이익이 되니 이론적으로 뇌물이 될 수 없
+        NS에 '용도변경 조건으로 광고비를 받았다고 가정해도 이재명 개인이 아닌 성남시민의 이익이 되니 이론적으로 뇌물이 될 수 없
+    </div>
+</body>
+</html>

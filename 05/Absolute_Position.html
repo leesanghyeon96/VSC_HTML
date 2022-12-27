@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{margin:0px;padding:0px;}  /* 초기화 후 시작한다. */
+        p {
+            width: 400px;
+            height: 50px;
+            border: 1px solid red;
+        }
+        .b1{
+            position:absolute;
+            top:50px;left:50px;     /* 초기값 0 은 그대로, 값이 입력되면 px를 붙인다. */
+        }
+
+        .b2{
+            position:absolute;
+            top:52px;left:52px;
+        }
+
+        .b3{
+            position:relative;
+            top:30px;left:30px;
+        }
+
+        </style>
+
+</head>
+
+<body>
+
+    <!-- 절대 위치 적용 : 
+        기준점 : top 0 , left 0     <-- 좌표의 왼쪽 최상단이 기준점
+    
+    -->
+    <h1> Position Style 3 - Absolute Position </h1>
+    <p class="b1"> 절대 위치 설정 적용 1 </p>
+    <p class="b2"> 절대 위치 설정 적용 2 </p>
+    <p class="b3"> 상대 위치 설정 적용 1 </p>
+
+</body>
+
+</html>
