@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 초기값을 리셋 및 기본설정 */
+        *{margin:0px;padding:0px;}
+        body{
+            font-family: "맑은 고딕","돋움";
+            font-size: 12px;
+            color:#444444;
+        }
+
+        #login_box{
+            width:220px;height:120px;
+            border:1px solid #bbbbbb;
+            border-radius:15px;
+            margin:10px 0 0 18px;       /* 10px : top, 0px : right, 0px : bottom, 18px : left */
+            padding:10px 0 0 15px;      /* top, right, bottom, left */
+        }
+        h2{
+            font-family: "Arial";
+            margin-bottom: 10px;
+        }
+        ul{
+            list-style-type: none;
+        }
+        #login_box input{       /* 후손 선택자(공백) */
+            width:100px; height:18px;
+        }
+        #id_pass,#login_btn{    /* 다중 선택자(,) */
+            display:inline-block;
+            vertical-align: top;    /* align:좌우, 수직에 대한 정렬:vertical-align:top, middle, bottom */
+        }
+        #id_pass span{          /* 후손 선택자 */
+            display:inline-block;
+            width:20px;             /* id와 pw의 박스크기를 맞춰 정렬시킨다. */
+        }
+        #pass{
+            margin-top:3px;
+        }
+        #login_btn button{
+            margin-left: 5px;
+            /* padding 값을 넣으면 로그인 박스가 커짐 */
+            /* width와 height를 넣으면 text-align으로 정렬을 다시 해주어야함 */
+            padding:12px;
+            border-radius: 5px;
+        }
+        #btns{
+            margin:12px;
+        }
+        #btns li{
+            display:inline;
+        }
+        #id_pass2{
+            margin-left:12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="login_box">
+        <h2> Member Login </h2>
+        <ul id="input_botton">
+            <li id="id_pass"> 
+                <ul>
+                    <li>
+                        <span>ID</span> 
+                        <input type="text" name="id">
+                    </li>
+                    <li id="pass">
+                        <span>PW</span>
+                        <input type="password" name="pw">
+                    </li>
+                </ul>
+            </li>
+            <li id="login_btn"> <button>로그인</button> </li>
+            
+        </ul>
+
+        <ul id="btns">
+            <li><a href="#">회원가입</a></li>
+            <li id="id_pass2"><a href="#">아이디/비밀번호찾기</a></li>
+        </ul>
+
+    </div>
+</body>
+</html>
