@@ -6,72 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{margin:0px; padding:0px;}
+        *{
+            margin:0px; padding:0px;
+            list-style-type: none;
+        }
         span>section{
             float:left;
-            border:1px solid gray;
         }
         .ms1{
             clear:both;
-            border:1px solid green;
         }
         .sa1{
             float:left;
-            border:1px solid blue;
             width:16%;
             color:#5eb2ae;
             
         }
         .sa2{
             float:left;
-            width:30%;
-            border:1px solid red;
+            width:25%;
             padding:30px;
         }
-        .mas1{
-            border:px solid red;
+        .img1{
             float:left;
-            margin:10px;
+        }
+        .img2{
+            float:right;
+        }
+        .masd1{
+            float:left;
+        }
+        .masd2{
+            float:right;
         }
         .sau1{
-            border:1px solid red;
             color:black;
         }
         .sau1 ::marker{
             color:#5eb2ae;
         }
-        .s1{
-            background-color: #5eb2ae;
-            
+        .s1 div{
+            display:inline;
+            background-color: rgb(0, 168, 171);
         }
         
     </style>
 </head>
 <body>
-    <span class="s1">
-        <section><img src="img/banner01.gif"></section>
-        <section><img src="img/banner02.gif"></section>
-        <section><img src="img/banner03.gif"></section>
-    </span>
+    <article class="s1">
+        <div><img src="img/banner01.gif"width=32%; height="100px";></div>
+        <div><img src="img/banner_bar.gif"width=1%; height="100px";></div>
+        <div><img src="img/banner02.gif"width=32%; height="100px";></div>
+        <div><img src="img/banner_bar.gif"width=1%; height="100px";></div>
+        <div><img src="img/banner03.gif"width=32%; height="100px";></div>
+    </article>
 
     <section class="ms1">
         <article class="sa2"><img src="img/customer.gif"></article>
 
         <article class="sa2">
             <span class="mas1">
-                <div><img src="img/title_notice.gif"></div>
-                <div class="masd1">새로운 상품의 출시를 알려드립니다.</div>
-                <div class="masd1">새로운 상품의 출시를 알려드립니다.</div>
-                <div class="masd1">새로운 상품의 출시를 알려드립니다.</div>
-                <div class="masd1">새로운 상품의 출시를 알려드립니다.</div>
+                <div class="img1"><img src="img/title_notice.gif"></div>
+                <div class="img2"><img src="img/more.gif"></div>
+                <ul class="mu1">
+                    <li>
+                        <div class="masd1">새로운 상품의 출시를 알려드립니다.</div>
+                        <div class="masd2">2014-03-03</div>
+                    </li>
+                    <li>
+                        <div class="masd1">새로운 상품의 출시를 알려드립니다.</div>
+                        <div class="masd2">2014-03-03</div>
+                    </li>
+                    <li>
+                        <div class="masd1">새로운 상품의 출시를 알려드립니다.</div>
+                        <div class="masd2">2014-03-03</div>
+                    </li>
+                    <li>
+                        <div class="masd1">새로운 상품의 출시를 알려드립니다.</div>
+                        <div class="masd2">2014-03-03</div>
+                    </li>
+                </ul>
+                
             </span>
-            <span class="mas1">
-                <div><img src="img/more.gif"></div>
-                <div class="masd2">2014-03-03</div>
-                <div class="masd2">2014-03-03</div>
-                <div class="masd2">2014-03-03</div>
-                <div class="masd2">2014-03-03</div>
-            </span>
+            
         </article>
 
         <article class="sa2">

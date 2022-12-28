@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2단 고정 레이아웃</title>
+    <style>
+        *{margin:0px;padding:0px;}
+        #wrap{
+            width:900px;            /* heigth를 지정하면 문제가 생길 가능성이 있어 지정하지 않는다. */
+            margin:0 auto;              /* 이하의 태그에서 height 지정시 자동으로 늘어남 */
+            border:1px solid red;
+        }
+        header{
+            border:1px solid red;
+            height:88px;            /* width는 div의 블락이라 width가 상속됨, 재지정 가능 */
+        }
+        aside{
+            border:1px solid red;
+            width:200px;height:300px;
+            float:left;
+            background-color: yellow;
+        }
+        main{
+            border:1px solid red;
+            width:700px;height:300px;
+            background-color: blue;
+            margin-left:200px;          
+        }   /* 시멘트릭 태그에서 float속성을 사용하면 겹쳐서 출력되는 현상이 발생 : margin-left를 사용해서 적당히 이동 */                                
+        /* border가 겹치지 않게 위치를 옮긴다. *//* 디브박스와 달리 시멘트릭태그는 float을 할 경우 border가 다른 박스와 겹친다. */
+        footer{
+            border:1px solid red;
+            height:90px;
+        }
+        #clear{
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+    <!-- 2단 고정 레이아웃 : 픽셀로 레이아웃을 지정 : 화면의 크기가 고정 -->
+    <div id="wrap">
+        <header> 헤더 컨텐츠 </header>
+        <aside> 좌측 컨텐츠 </aside>
+        <main> 메인 컨텐츠 </main>
+        <div id="clear"></div>          <!-- clear가 필요할 시  -->
+        <footer> 푸터 컨텐츠 </footer>
+
+    </div>
+</body>
+</html>

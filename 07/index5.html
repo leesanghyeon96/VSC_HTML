@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //JavaScript를 넣는 블락
+        function includeHTML(){
+            let z, elmnt, file, xhttp;
+        
+            z = document.getElementsByTagName("*");
+            
+            for (let i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            file = elmnt.getAttribute("data-include");
+            
+            if (file) {
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                    if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                    /* Remove the attribute, and call this function once more: */
+                    elmnt.removeAttribute("data-include");
+                    includeHTML();
+                }//if
+                }//onreadystatechange
+        
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                return;
+            }//if - file
+            }//for
+        }//includeHTML
+
+    </script>
+</head>
+<body>
+
+    <div data-include="header.html"></div>  
+    <div data-include="main.html"></div>    
+
+    <script>
+        includeHTML();
+    </script>
+    
+    <!-- JavaScript를 사용해서 외부 파일을 Include 처리 -->
+
+    <!--JAVASCRIP를 넣고 
+        elmnt.removeAttribute("data-include"); 의 변수인 data-include를
+        div태그에 
+            <div data-include="header.html"></div>  
+            <div data-include="main.html"></div> 
+        넣고 
+        <script>
+            includeHTML();
+        </script>
+        한다.
+    -->
+
+</body>
+</html>
