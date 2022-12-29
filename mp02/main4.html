@@ -5,40 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        //JavaScript를 넣는 블락
-        function includeHTML(){
-            let z, elmnt, file, xhttp;
-        
-            z = document.getElementsByTagName("*");
-            
-            for (let i = 0; i < z.length; i++) {
-            elmnt = z[i];
-            file = elmnt.getAttribute("data-include");
-            
-            if (file) {
-                xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                if (this.readyState == 4) {
-                    if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                    if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                    /* Remove the attribute, and call this function once more: */
-                    elmnt.removeAttribute("data-include");
-                    includeHTML();
-                }//if
-                }//onreadystatechange
-        
-                xhttp.open("GET", file, true);
-                xhttp.send();
-                return;
-            }//if - file
-            }//for
-        }//includeHTML
-    </script>
-
-
     <style>
-        *{margin:0px; padding:0px;}
+                        *{margin:0px; padding:0px;}
         body{
             width:80%;
             margin:0 auto;
@@ -92,7 +60,7 @@
             box-sizing: border-box;
             border:1px solid red;
             position:absolute;
-            top:40%;
+            top:22%;
             left:12%;
             height:150px;
         }
@@ -113,52 +81,31 @@
             box-sizing: border-box;
             border:1px solid red;
         }
-        .text_five{
-            float:left;     
-        }
-        .select{
-            float:right;
-        }
-        .button{
-            background:linear-gradient(rgb(214, 210, 210),black);
-            color:white;
-        }
         .table{
             box-sizing: border-box;
-            border:1px solid red;
             width:100%;
-            clear:both;
-        }
-        .td2{
-            text-align: center;
-        }
-        .td1{
-            text-align:left;
+            border-collapse: collapse;
         }
         .table th{
-            background-color: rgb(196, 195, 195);
+            text-align: center;
+            background-color: rgb(180, 177, 177);  
         }
-        .next{
-            padding-left: 45%;
-            box-sizing: border-box;
-            border:1px solid red;
-            float:left;
+        .td3{
+            text-align: center;
         }
-        .list_write{
+        .td4{
+            padding-left: 10px;
+        }
+        .table th,td{
+            padding:3px 0 3px 0;
+        }
+        .last{
             float:right;
-            padding-right: 20px;;
-        }
-        .footer{
-            clear:both;
+            padding:10px;
         }
     </style>
 </head>
 <body>
-
-    <div data-include="header.html"></div>
-
-
-
 
     <aside class="aside"><!-- aside menu -->
         <div class="leftbox1">  <!-- 로그인 박스 -->
@@ -200,41 +147,18 @@
     <main class="main">     <!-- main 시작 -->
         <div><img src="img/comm.gif"></div>     <!-- 커뮤니티 이미지 -->
         <br>    
-        <div>
-            <b>자유 게시판</b>      <!-- 여기까지 똑같음 -->
-            <hr>  <!-- 줄 -->
-            <div class="text_five">▷ 총 5개의 게시물이 있습니다.</div>
-            <div class="select">
-                <span><img src="img/select_search.gif"></span>
-                <span>
-                    <select>
-                        <option>제목</option>
-                        <option>내용</option>
-                    </select>
-                </span>
-                <span><input type="text" size="10"></span>
-                <span><button class="button">검색</button></span>
-            </div>
-        </div>
-        <table class="table">
-            <tr><th>번호</th><th>제목</th><th>글쓴이</th><th>일시</th><th>조회수</th></tr>
-            <tr><td class="td2">1</td><td class="td1">까스릉님의 선물인 보드카가 정말 독하네요!!!</td><td class="td2">루바토</td><td class="td2">2017-09-20</td><td class="td2">15</td></tr>
-            <tr><td class="td2">1</td><td class="td1">까스릉님의 선물인 보드카가 정말 독하네요!!!</td><td class="td2">루바토</td><td class="td2">2017-09-20</td><td class="td2">15</td></tr>
-            <tr><td class="td2">1</td><td class="td1">까스릉님의 선물인 보드카가 정말 독하네요!!!</td><td class="td2">루바토</td><td class="td2">2017-09-20</td><td class="td2">15</td></tr>
+        <div><b>자유 게시판</b></div>
+        <br>
+        <table class="table" border="1">
+            <tr><th colspan="2">글쓰기</th></tr>
+            <tr><td width="30%;" class="td3">이름</td><td class="td4"><textarea name="name" rows="1" cols="10"></textarea></td></tr>
+            <tr><td class="td3">제목</td><td class="td4"><textarea name="name2" rows="1" cols="70"></textarea></td></tr>
+            <tr><td class="td3">내용</td><td class="td4"><textarea name="name3" rows="15" cols="70"></textarea></td></tr>
+            <tr><td class="td3">업로드 파일</td><td class="td4"><textarea nema="name4" rows="1" cols="20"></textarea><span><button>파일선택</button></span><span>선택된 파일 없음</span></td></tr>
         </table>
-        <div class="next">◀ 이전 | 다음 ▶</div>
-        <div class="list_write">
+        <div class="last">
+            <span><img src="img/ok.png"></span>
             <span><img src="img/list.png"></span>
-            <span><img src="img/write.png"></span>
         </div>
-    </main>
-
-    <div data-include="footer.html" class="footer"></div>
-
-    <script>
-        includeHTML();
-    </script>
-
-
 </body>
 </html>

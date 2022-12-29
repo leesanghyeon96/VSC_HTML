@@ -5,40 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        //JavaScript를 넣는 블락
-        function includeHTML(){
-            let z, elmnt, file, xhttp;
-        
-            z = document.getElementsByTagName("*");
-            
-            for (let i = 0; i < z.length; i++) {
-            elmnt = z[i];
-            file = elmnt.getAttribute("data-include");
-            
-            if (file) {
-                xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                if (this.readyState == 4) {
-                    if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                    if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                    /* Remove the attribute, and call this function once more: */
-                    elmnt.removeAttribute("data-include");
-                    includeHTML();
-                }//if
-                }//onreadystatechange
-        
-                xhttp.open("GET", file, true);
-                xhttp.send();
-                return;
-            }//if - file
-            }//for
-        }//includeHTML
-    </script>
-
-
     <style>
-        *{margin:0px; padding:0px;}
+                *{margin:0px; padding:0px;}
         body{
             width:80%;
             margin:0 auto;
@@ -92,7 +60,7 @@
             box-sizing: border-box;
             border:1px solid red;
             position:absolute;
-            top:40%;
+            top:22%;
             left:12%;
             height:150px;
         }
@@ -113,52 +81,42 @@
             box-sizing: border-box;
             border:1px solid red;
         }
-        .text_five{
-            float:left;     
+        .first_gray{
+            background-color:rgb(239,239,239);
+            border-top: 3px solid gray;
         }
-        .select{
-            float:right;
-        }
-        .button{
-            background:linear-gradient(rgb(214, 210, 210),black);
-            color:white;
-        }
-        .table{
-            box-sizing: border-box;
-            border:1px solid red;
-            width:100%;
-            clear:both;
-        }
-        .td2{
-            text-align: center;
-        }
-        .td1{
-            text-align:left;
-        }
-        .table th{
-            background-color: rgb(196, 195, 195);
-        }
-        .next{
-            padding-left: 45%;
-            box-sizing: border-box;
-            border:1px solid red;
+        .gray_text1{background-color:rgb(239,239,239);
             float:left;
+            width:61%;
         }
-        .list_write{
+        .gray_text2{background-color:rgb(239,239,239);
             float:right;
-            padding-right: 20px;;
         }
-        .footer{
+        .tx_five{
             clear:both;
+        }
+        .second_gray{
+            background-color:rgb(239,239,239);
+            border-top:3px solid gray;
+        }
+        .comments{
+            box-sizing: border-box;
+            border:1px solid red;
+            position:relative;
+            bottom:40px;
+        }
+        .ok_ripple{
+            position: relative;
+            top:3px;
+            left:3px;
+        }
+        .last_img{
+            float:right;
+            padding-top: 5px;;
         }
     </style>
 </head>
 <body>
-
-    <div data-include="header.html"></div>
-
-
-
 
     <aside class="aside"><!-- aside menu -->
         <div class="leftbox1">  <!-- 로그인 박스 -->
@@ -200,41 +158,30 @@
     <main class="main">     <!-- main 시작 -->
         <div><img src="img/comm.gif"></div>     <!-- 커뮤니티 이미지 -->
         <br>    
-        <div>
-            <b>자유 게시판</b>      <!-- 여기까지 똑같음 -->
-            <hr>  <!-- 줄 -->
-            <div class="text_five">▷ 총 5개의 게시물이 있습니다.</div>
-            <div class="select">
-                <span><img src="img/select_search.gif"></span>
-                <span>
-                    <select>
-                        <option>제목</option>
-                        <option>내용</option>
-                    </select>
-                </span>
-                <span><input type="text" size="10"></span>
-                <span><button class="button">검색</button></span>
-            </div>
+        <div><b>자유 게시판</b></div>
+        <br>
+        <div class="first_gray">
+            <div class="gray_text1"> 까스릉님의 선물인 보드카가 정말 독하네요!!!</div>
+            <div class="gray_text2">루바토 | 조회 : 208 | 2016-04-28 (09;20)</div>
         </div>
-        <table class="table">
-            <tr><th>번호</th><th>제목</th><th>글쓴이</th><th>일시</th><th>조회수</th></tr>
-            <tr><td class="td2">1</td><td class="td1">까스릉님의 선물인 보드카가 정말 독하네요!!!</td><td class="td2">루바토</td><td class="td2">2017-09-20</td><td class="td2">15</td></tr>
-            <tr><td class="td2">1</td><td class="td1">까스릉님의 선물인 보드카가 정말 독하네요!!!</td><td class="td2">루바토</td><td class="td2">2017-09-20</td><td class="td2">15</td></tr>
-            <tr><td class="td2">1</td><td class="td1">까스릉님의 선물인 보드카가 정말 독하네요!!!</td><td class="td2">루바토</td><td class="td2">2017-09-20</td><td class="td2">15</td></tr>
-        </table>
-        <div class="next">◀ 이전 | 다음 ▶</div>
-        <div class="list_write">
+        <div class="tx_five">
+            <br>
+            <div>까스롱님 고맙습니다.</div>
+            <div>까스롱님 고맙습니다.</div>
+            <div>까스롱님 고맙습니다.</div>
+            <div>까스롱님 고맙습니다.</div>
+            <div>까스롱님 고맙습니다.</div>
+        </div>
+        <div class="second_gray">
+            <span class="comments"><img src="img/title_comment.gif"></span>
+            <span><textarea name="profile" rows="5" cols="75"></textarea></span>
+            <span class="ok_ripple"><img src="img/ok_ripple.gif"></span>
+        </div>
+        <div class="last_img">
+            <span><img src="img/delete.png"></span>
             <span><img src="img/list.png"></span>
             <span><img src="img/write.png"></span>
         </div>
-    </main>
-
-    <div data-include="footer.html" class="footer"></div>
-
-    <script>
-        includeHTML();
-    </script>
-
 
 </body>
 </html>

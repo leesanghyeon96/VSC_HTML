@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //JavaScript를 넣는 블락
+        function includeHTML(){
+            let z, elmnt, file, xhttp;
+        
+            z = document.getElementsByTagName("*");
+            
+            for (let i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            file = elmnt.getAttribute("data-include");
+            
+            if (file) {
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                    if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                    /* Remove the attribute, and call this function once more: */
+                    elmnt.removeAttribute("data-include");
+                    includeHTML();
+                }//if
+                }//onreadystatechange
+        
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                return;
+            }//if - file
+            }//for
+        }//includeHTML
+    </script>
+
+
+    <style>
+        *{margin:0;padding:0;}
+        .outbox{
+            width:1500px;
+            border:1px solid black;
+            margin:0 auto;
+        }
+        .index_aside{
+            box-sizing: border-box;
+            border:1px solid red;
+            width:400px;
+            float:left;
+            height:400px;
+        }
+        .index_aside_div{
+            box-sizing: border-box;
+            border:1px solid red;
+            padding:10px 0 10px 50px;
+            background-color: rgb(150, 193, 31);
+            color:white;
+        }
+        .index_aside_li{
+            list-style-type: none;
+            box-sizing: border-box;
+            padding:5px;
+            border-bottom:1px solid rgb(190, 189, 189);
+        }
+        .main1_img{
+            float:left;
+        }
+        .main1_div{
+            box-sizing: border-box;
+            border:1px solid red;
+        }
+        .main1_div_ul{
+            box-sizing: border-box;
+            border:1px solid green;
+            position:absolute;
+            left:1180px;
+            top:232px;
+        }
+        .main1_div_li::marker{
+            color:aqua;
+        }
+        .main1_div_week{
+            z-index:5;
+        }
+        .main_div_img{
+            z-index:7;
+            box-sizing: border-box;
+            border:1px solid green;
+            position:absolute;
+            left:1165px;
+            top:430px;
+        }
+
+        .main2{
+            box-sizing: border-box;
+            border:10px solid black;
+            width:1000px;
+            height:1000px;
+            z-index:10;
+        }
+        .main2_img1{
+            box-sizing: border-box;
+            border:1px solid red;
+            width:600px;
+        }
+        .main2_img2{
+            box-sizing: border-box;
+            border:1px solid red;
+            position:relative;
+            width:500px;
+            bottom:320px;
+            left:50px;
+            
+        }
+        .main2_img3{
+            box-sizing: border-box;
+            border:1px solid red;
+            width:700px;
+        }
+        .main2_img3_span2{
+            z-index: 1;
+            box-sizing: border-box;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <div data-include="header.html"></div>
+
+    <div class="outbox">   <!-- 제일 바깥 태그 -->
+        <aside class="index_aside">
+            <div class="index_aside_div"><b>CATEGORY ITEM</b></div>
+            <ul>
+                <li class="index_aside_li">생활아트</li>
+                <li class="index_aside_li">캔버스 아트</li>
+                <li class="index_aside_li">사진 벽지</li>
+                <li class="index_aside_li">창문형/현관문형</li>
+                <li class="index_aside_li">포인트 벽지</li>
+                <li class="index_aside_li">세계지도</li>
+                <li class="index_aside_li">엔티크 세계지도 벽지</li>
+                <li class="index_aside_li">입체 세계지도 벽지</li>
+                <li class="index_aside_li">어린이방 세계지도</li>
+                <li class="index_aside_li">족자형 틀스크린</li>
+                <li class="index_aside_li">맞춤제작 결제창</li>
+            </ul>
+        </aside>
+
+        <main1>  <!-- 시작 -->
+            <div class="main1_img"><img src="img/main_img.gif"></div>
+            <div>
+                <div class="main1_div"><img src="img/latest_notice.gif"></div>
+                <ul class="main1_div_ul">
+                    <li class="main1_div_li">폭설로 인한 배송지연 안내</li>
+                    <li class="main1_div_li">폭설로 인한 배송지연 안내</li>
+                    <li class="main1_div_li">폭설로 인한 배송지연 안내</li>
+                    <li class="main1_div_li">폭설로 인한 배송지연 안내</li>
+                    <li class="main1_div_li">폭설로 인한 배송지연 안내</li>
+                    <li class="main1_div_li">폭설로 인한 배송지연 안내</li>
+                </ul>
+            </div>
+            <div>
+                <div class="main1_div_week"><img src="img/week_event.gif"></div>
+                <div class="main_div_img"><img src="img/week_event_img.gif"></div>
+            </div>
+        </main1>
+
+        <main2>
+            <div class="main2_img1"><img src="img/special_shop.gif"></div>
+            <div class="main2_img2">
+                <span><img src="img/special_img1.gif"></span>
+                <span class="main2_img2_img1"><img src="img/special_img2.gif"></span>
+            </div>
+            <div class="main2_img3">
+                <span class="main2_img3_span1"><img src="img/landscape.gif"></span>
+                <span class="main2_img3_span2">
+                    <span><img src="img/landscape_img1.gif"></span>
+                    <span><img src="img/landscape_img2.gif"></span>
+                </span>
+                
+            </div>
+            <div></div>
+            <div></div>
+        </main2>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        includeHTML();
+    </script>
+</body>
+</html>

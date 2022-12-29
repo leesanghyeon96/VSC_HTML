@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        .out{
+            box-sizing: border-box;
+            border:1px solid red;
+            height:500px;
+            width:1105px;
+            margin:0 auto;
+        }
+        .header{
+            box-sizing: border-box;
+            border:1px solid blue;
+            height:150px;
+            width:100%;
+            
+        }
+        header>div{
+            float:left;
+        }
+        .div1{
+            box-sizing: border-box;
+            border:1px solid gray;
+            height:100px;
+            width:300px;
+            display: inline;
+        }
+        .div2{
+            box-sizing: border-box;
+            border:1px solid orange;
+            height:100px;
+            width:395px;
+        }
+        .div3{
+            box-sizing: border-box;
+            border:1px solid red;
+            height:100px;
+            width:300px;
+            margin-left: 700px;  /* 문제 발견 */ 
+            float:left;
+        }
+        body{
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="out">
+        <header class="header">
+            <div class="div1">div1</div>
+            <div class="div2">div2</div>
+            <div class="div3">div3</div>
+        </header>
+    </div>
+</body>
+</html>
