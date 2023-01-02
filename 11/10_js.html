@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전역변수와 지역변수2</title>
+</head>
+<body>
+        <!-- 전역변수와 지역변수 이해하기 -->
+        <script>
+            function getGrade() {        // 함수 : 호출을 해야 작동을 함
+                // function 내부에서 var를 선언하고 변수를 생성하면 함수 내부에서만 사용(지역변수)이 가능하고
+                // var를 선언하지 않고 변수를 생성하면 전역변수 처럼 사용되어 외부에서 호출시 함수내의 변수값이 호출된다.
+                var kor=95;             // 지역변수 : 함수 내부에 변수 선언 (함수 외부에서 사용불가)
+                kor=95;                 // 자동 전역변수로 변환
+            }
+            var kor=100;        // 전역변수 : 함수 밖에서 선언 , 외부에서 사용되고, 함수 내부에서도 사용됨
+            getGrade();         //함수 호출됨
+            document.write("국어 점수 : " + kor + "<p />");  //국어점수 : 100 출력 => 함수호출 x
+    
+        </script>
+</body>
+</html>

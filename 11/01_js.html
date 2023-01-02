@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> JavaScript가 작동되는 순서 </title>
+    <script>
+        var num=0;  /* 코드의 끝에 ;가 붙어있어야한다. */
+        document.write("head 태그내의 실행순서" + num + "<br />");
+        console.log("콘솔 출력 : " + num);
+    </script>
+        <script>
+            var num=1;  /* 코드의 끝에 ;가 붙어있어야한다. */
+            document.write("head 태그내의 실행순서" + num + "<br />");
+            console.log("콘솔 출력 : " + num);
+        </script>
+</head>
+<body>
+    <script>
+        var num=2;  /* 코드의 끝에 ;가 붙어있어야한다. */
+        document.write("body 태그내의 실행순서" + num + "<br />");
+        console.log("콘솔 출력 : " + num);
+    </script>
+    <script>
+        var num=3;  /* 코드의 끝에 ;가 붙어있어야한다. */
+        document.write("body 태그내의 실행순서" + num + "<br />");
+        console.log("콘솔 출력 : " + num);
+    </script>
+
+
+
+
+
+
+    <!-- *** JavaScript 중요하다. ***
+        Java 와 JavaScript는 와나전히 다른 언어이다.
+            - Java : Language (언어) , 컴파일을 해서 출력 , 처리속도가 빠르다.
+        JavaScript : 컴파일을 하지 않는 인터프린터 언어이다.
+            - 웹바라우저에서 코드를 해석할 수 있는 해석기가 해석해서 출력
+            HTML 태그 내에서 <head> ~ <head> 또는 <body> ` <body> 블락 내에
+                <script> JavaScript </script> <== 형식이 들어간다.
+                <script src="외부의자바스크립트"> </script> <== 외부의 script를 불러올 수도 있다.
+    
+            var 변수명 = 값 ;       var는 자바스크립트의 모든 데이터 타입을 처리
+            document.write : body내에 출력해라 (br태그를 넣으면 엔터가 들어가서 출력됨)
+
+            ctrl + ` : 터미널 창을 띄우는 단축키 (또는 콘솔창이라 한다.)
+            console.log : console에 출력
+            브라우저창 f12 크기확대 : ctrl + shift + (+-) => 저장이 안되고 간단히 테스트용도.
+    -->
+
+
+
+
+</body>
+</html>
