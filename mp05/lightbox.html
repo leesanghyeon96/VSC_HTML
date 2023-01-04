@@ -20,11 +20,11 @@
         }
         #lightbox{
             position:fixed;     /* 위치 고정 : 스크롤과 상관없이 위치 고정 */
-            width:100%;height:100%;
+            width:100%;
+            height:100%;
             background-color: rgba(0, 0, 0, 0.7);       /* 배경색 지정 */
             /* position:fixed 일때 top:0; left:0;는 absolute 기준점으로 설정됨. */
-            top:0;
-            left:0;
+            top:0;left:0;   /* 이미지 클릭시 background-color가 화면을 덮게 */
             /* display:none;   화면에서 사라짐 */
         }
 
@@ -37,7 +37,8 @@
     </style>
 </head>
 <body>
-    <div class="row">
+    
+    <div class="row">   <!-- 중앙정렬 -->
         <ul>
             <li><img src="images/tree-1-thumb.jpg" data-src="images/tree-1.jpg" class="pic"></li>
             <li><img src="images/tree-2-thumb.jpg" data-src="images/tree-2.jpg" class="pic"></li>
@@ -49,25 +50,27 @@
     </div>
 
     <!-- 원본이미지가 출력될 div -->
-    <div id="lightbox"><img src="images/tree-1.jpg" alt="" id="lightboxImage"></div>
+    <div id="lightbox">
+        <img src="images/tree-1.jpg" alt="" id="lightboxImage">
+    </div>
 
     <!-- 자바스크립트 -->
     <script>
-        // class, id 속성을 가져와서 변수에 할당.
+        // class, id 속성을 가져와서 변수에 할당. (하나의 객체처럼 작동함)
         var pics=document.getElementsByClassName("pic");    //getElements : 태그 ByClassName():클래스
         var lightbox=document.getElementById("lightbox");
         var lightboxImage=document.getElementById("lightboxImage");
 
         //for 루프를 돌리면서 썸네일을 클릭시 showLightbox() 함수를 호출
         for(var i=0;i<pics.length;i++){
-            pics[i].addEventListener("click",showLightbox);
+            pics[i].addEventListener("click",showLightbox); // addEventListener는 대기 후 click이벤트 발생시 showLightbox 함수 호출
                 //pics 배열의 i번째 요소를 클릭시 showLightbox() 함수를 호출
         } 
 
         //썸네일을 클릭시 img 태그의 원본 이미지를 적용하는 함수 , 화면에 출력하는 함수
         function showLightbox(){
             var bicLocation = this.getAttribute ("data-src");   // data-src의 값을 가져와서 bicLocation 변수에 할당
-            lightboxImage.setAttribute("src" , bicLocation);
+            lightboxImage.setAttribute("src" , bicLocation);    // setAttribute : 속성변경(src속성을 bicLocation으로 변경)
             lightbox.style.display="block";        /* 화면에 출력되도록 설정 : none => block */
         }
 
@@ -76,7 +79,7 @@
             lightbox.style.display="none";
         }
     </script>
-
+    
 
 
 </body>

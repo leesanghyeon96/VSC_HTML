@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구글 위성 지도 코드</title>
+</head>
+<body>
+    <!-- 구글 위성 지도 출력하는법 : https://www.daleseo.com/google-maps-api/(참고사이트)
+        1. API 코드 받기
+        2. 지도를 보여줄 구역 설정 
+            - body태그 내에 <div id="map" style="height: 600px;"></div> 와 같이 설정
+        3. 스크립트를 이용해 구글 maps API를 불러오기
+            -   <script defer src="./index.js"></script>
+                <script
+                    defer
+                    src="https://maps.googleapis.com/maps/api/js?key=<API 키>&callback=initMap"
+                ></script>
+        4. 구글 지도 보여주기
+            - window.initMap = function () {
+              const map = new google.maps.Map(document.getElementById("map"), {
+                  center: { lat: 37.5400456, lng: 126.9921017 },
+                  zoom: 10,
+              });
+              };
+        5. 마커로 위치 표시하기 (위의 코드 내에)
+            - window.initMap = function () {
+              const map = new google.maps.Map(document.getElementById("map"), {
+                  center: { lat: 37.5400456, lng: 126.9921017 },
+                  zoom: 10,
+              });
+              ----------------------------------------------------------------------
+              여기에 마커표시 작성하기
+              const malls = [
+                { label: "C", name: "코엑스몰", lat: 37.5115557, lng: 127.0595261 },
+                ];
+                malls.forEach(({ label, name, lat, lng }) => {
+                    const marker = new google.maps.Marker({
+                    position: { lat, lng },
+                    label,
+                    map,
+                    });
+                });
+                ----------------------------------------------------------------------
+              };
+        6. 지도경계 조정하기 
+        7. 클릭 시 정보 보여주기
+            const infowindow = new google.maps.InfoWindow();
+
+            marker.addListener("click", () => {
+            infowindow.setContent(name);
+            infowindow.open({
+                anchor: marker,
+                map,
+            });
+            });
+        8. 지도 중심 이동하기
+            map.panTo(marker.position);
+    -->
+</body>
+</html>
