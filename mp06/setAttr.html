@@ -93,12 +93,19 @@
     </div>
 
     <script>
-        // 1. class 속성을 가져와서 변수에 할당
-        // 2. for 루프를 돌리면서 썸네일을 클릭시 함수를 호출
-        // 3. 썸네일을 클릭시 img 태그의 원본 이미지를 적용하는 함수 , 화면에 출력하는 함수
-        // 4. 출력된 화면을 클릭시 다시 원래대로 되돌리는 함수 <== 보류
+        /*
+            querySelector() : css - id : #, class : .
 
+            getElementById() : 태그 내부에 적용된 id
+            getElementByclassName() : 태그 내부에 적용된 class
+
+            엘리멘트(태그)의 속성값을 변경할 때 : 객체.setAttribue를 사용함. id속성에만 적용되어있다.
+                class 속성에는 setAttribute가 없다.
+        */
+
+        /* DOM 객체를 생성 */
         // 1. class 속성을 가져와서 변수에 할당
+        /* var vunder_img1=document.querySelector(".under_img1")도 사용 가능 */
         var vunder_img1=document.getElementsByClassName("under_img1");  // 클릭할 이미지
         var close_img=document.getElementById("close_img");     // 클릭해서 커질 이미지 배경
         var close_img_img=document.getElementById("close_img_img");  // 클릭해서 커질 이미지
@@ -115,6 +122,10 @@
             close_img.style.display="block";
         }
 
+        // 4. 출력된 화면을 클릭시 다시 원래대로 되돌리는 함수 <== 보류
+        close_img.onclick=function(){
+            close_img.style.display="none";
+        }
         
     </script>
 
