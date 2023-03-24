@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach : 배열을 반복하며 저장된 데이터를 조회1</title>
+</head>
+<body>
+    <!--
+        forEach : 배열의 0번 방부터 마지막 방까지 자동으로 처리
+            item : 배열의 값
+            index : 배열의 방번호
+    -->
+    <script>
+        var kdata=['서울', '부산', '청주', '대구'];
+        function printArr(item, index){
+            document.write("배열 데이터 [" + index + "] : " + item + "<br>");
+        }
+        kdata.forEach(printArr);
+    </script>
+</body>
+</html>

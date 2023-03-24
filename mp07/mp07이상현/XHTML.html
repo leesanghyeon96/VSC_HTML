@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div_id2{
+            display:none;
+        }
+        #div_id11{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div id="div_id1">▶ XTHML의 의미</div>
+    <div id="div_id11">▼ XTHML의 의미</div>
+    <div id="div_id2">XTML(Extensible HyperText Markup Language)은 확장성이 있는 하이퍼 텍스트 마크업 언어이다.</div>
+
+    <script>
+        var a1 = document.getElementById('div_id1');
+        var a11 = document.getElementById('div_id11');
+        a1.addEventListener('click',post);
+        a11.addEventListener('click',postn);
+
+        function post(){
+            div_id2.style.display="block";
+            div_id1.style.display="none";
+            div_id11.style.display="block";
+        }
+
+        function postn(){
+            div_id2.style.display="none";
+            div_id1.style.display="block";
+            div_id11.style.display="none";
+        }
+
+    </script>
+
+
+</body>
+</html>

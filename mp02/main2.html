@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //JavaScript를 넣는 블락
+        function includeHTML(){
+            let z, elmnt, file, xhttp;
+        
+            z = document.getElementsByTagName("*");
+            
+            for (let i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            file = elmnt.getAttribute("data-include");
+            
+            if (file) {
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                    if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                    /* Remove the attribute, and call this function once more: */
+                    elmnt.removeAttribute("data-include");
+                    includeHTML();
+                }//if
+                }//onreadystatechange
+        
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                return;
+            }//if - file
+            }//for
+        }//includeHTML
+    </script>
+
+
+    <style>
+        *{margin:0px; padding:0px;}
+        body{
+            width:80%;
+            margin:0 auto;
+            border:1px solid black;
+        }
+
+        .aside{
+            width:20%;                  /* aside의 전체 비율 */
+            box-sizing: border-box;
+            border:1px solid black;
+            float:left;
+        }
+
+        .leftbox1{      /* 로그인 박스 */
+            width:100%;
+            box-sizing: border-box;
+            border:1px solid red;
+            background-color:rgb(243, 243, 243);    /* 로그인박스 배경색 */
+            border-radius: 10px;                      /* 박스 테두리 둥글게 */
+        }
+        .login_logo{    /* member login 이미지 */
+            box-sizing: border-box;
+            width:120px;
+            padding:10px;
+        }
+        .textbar{       /* 아이디 비밀번호 입력창 */
+            box-sizing: border-box;
+            width:110px;
+            padding-left: 3px;
+            float:left;
+        }
+        .login_box{     /* 로그인 박스 이미지 */
+            box-sizing: border-box;
+        }
+        .login_member{  /* 회원가입, 아이디/비번찾기 */
+            box-sizing: border-box;
+        }
+
+
+        .leftbox2{
+            width:100%;
+            box-sizing: border-box;
+            border:1px solid red;
+        }
+        .community_box img{
+            box-sizing: border-box;
+            border:1px solid red;
+            position:relative;
+        }
+        .inner_text{
+            box-sizing: border-box;
+            border:1px solid red;
+            position:absolute;
+            top:40%;
+            left:12%;
+            height:150px;
+        }
+
+
+        .leftbox3{
+            width:100%;
+            box-sizing: border-box;
+            border:1px solid gray;
+            border-radius: 10px;
+        }
+        /* aside css 끝 */
+
+        /* main css 시작 */
+        .main{
+            width:78%;
+            float:right;
+            box-sizing: border-box;
+            border:1px solid red;
+        }
+        .text_five{
+            float:left;     
+        }
+        .select{
+            float:right;
+        }
+        .button{
+            background:linear-gradient(rgb(214, 210, 210),black);
+            color:white;
+        }
+        .table{
+            box-sizing: border-box;
+            border:1px solid red;
+            width:100%;
+            clear:both;
+        }
+        .td2{
+            text-align: center;
+        }
+        .td1{
+            text-align:left;
+        }
+        .table th{
+            background-color: rgb(196, 195, 195);
+        }
+        .next{
+            padding-left: 45%;
+            box-sizing: border-box;
+            border:1px solid red;
+            float:left;
+        }
+        .list_write{
+            float:right;
+            padding-right: 20px;;
+        }
+        .footer{
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+
+    <div data-include="header.html"></div>
+
+
+
+
+    <aside class="aside"><!-- aside menu -->
+        <div class="leftbox1">  <!-- 로그인 박스 -->
+            <div class="login_logo"><img src="img/ttl_login.png"></div>
+            <div class="textbar">
+                <div><input type="text" name="id" size="10"></div>
+                <div><input type="password" name="password" size="10"></div>
+            </div>
+            <div class="login_box"><img src="img/btn_login.gif"></div>
+            <div class="login_member">
+                <span><img src="img/btn_join.gif"></span>
+                <span><img src="img/btn_search.gif"></span>
+            </div>
+        </div>
+
+
+        <div class="leftbox2">
+            <div class="community_box">
+                <img src="img/sub_menu_bg.png">
+                <div class="inner_text">
+                    <p>+ 자유 게시판</p>
+                    <p>+ 방명록</p>
+                    <p>+ 공지사항</p>
+                    <p>+ 등업요청</p>
+                    <p>+ 포토갤러리</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="leftbox3">
+            <img src="img/banner1.png">
+            <img src="img/banner2.png">
+            <img src="img/banner3.png">
+        </div>
+    </aside>        <!-- aside 끝 -->
+
+
+    <main class="main">     <!-- main 시작 -->
+        <div><img src="img/comm.gif"></div>     <!-- 커뮤니티 이미지 -->
+        <br>    
+        <div>
+            <b>자유 게시판</b>      <!-- 여기까지 똑같음 -->
+            <hr>  <!-- 줄 -->
+            <div class="text_five">▷ 총 5개의 게시물이 있습니다.</div>
+            <div class="select">
+                <span><img src="img/select_search.gif"></span>
+                <span>
+                    <select>
+                        <option>제목</option>
+                        <option>내용</option>
+                    </select>
+                </span>
+                <span><input type="text" size="10"></span>
+                <span><button class="button">검색</button></span>
+            </div>
+        </div>
+        <table class="table">
+            <tr><th>번호</th><th>제목</th><th>글쓴이</th><th>일시</th><th>조회수</th></tr>
+            <tr><td class="td2">1</td><td class="td1">까스릉님의 선물인 보드카가 정말 독하네요!!!</td><td class="td2">루바토</td><td class="td2">2017-09-20</td><td class="td2">15</td></tr>
+            <tr><td class="td2">1</td><td class="td1">까스릉님의 선물인 보드카가 정말 독하네요!!!</td><td class="td2">루바토</td><td class="td2">2017-09-20</td><td class="td2">15</td></tr>
+            <tr><td class="td2">1</td><td class="td1">까스릉님의 선물인 보드카가 정말 독하네요!!!</td><td class="td2">루바토</td><td class="td2">2017-09-20</td><td class="td2">15</td></tr>
+        </table>
+        <div class="next">◀ 이전 | 다음 ▶</div>
+        <div class="list_write">
+            <span><img src="img/list.png"></span>
+            <span><img src="img/write.png"></span>
+        </div>
+    </main>
+
+    <div data-include="footer.html" class="footer"></div>
+
+    <script>
+        includeHTML();
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;box-sizing: border-box;}
+        .out{
+            border:1px solid red;
+            width:660px;
+            height:800px;
+        }
+        .aside{
+            width:350px; height:500px;
+            float:left;
+        }
+        .text{
+            font-size: 36px;
+            padding:20px 0 0 40px;
+        }
+        #close_img{
+            width:350px; height:280px;
+            padding:20px 0 0 40px;
+            margin-bottom: 20px;
+        }
+
+        .under_img{
+            margin-left: 45px;
+        }
+        .under_img1{
+            width:77px;
+            float:left;
+        }
+
+        .main{
+            width:308px;
+            height:660px;
+            float:right;
+
+        }
+        .out_div{
+            margin-top:110px;
+        }
+        .out_div ul{
+            width:210px;
+            margin-left: 50px;
+            list-style-type: none;
+        }
+        .out_div_ul_li_color{
+            color:blue;
+        }
+        button{
+            width:250px;
+            height:40px;
+            margin:30px 0 30px 50px;
+        }
+        .xx{
+            color:blue;
+            width:150px;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="out">
+        <aside class="aside">
+            <div class="text"><b>에디오피아 게뎁</b></div>
+            <div id="close_img"><img src="images/coffee-pink.jpg" width="250px" height="250px" id="close_img_img" alt=""></div>
+            <div class="under_img">
+                <div><img class="under_img1" src="images/coffee-pink.jpg" width="75px" height="75px" data-src="images/coffee-pink.jpg"></div>
+                <div><img class="under_img1" src="images/coffee-gray.jpg" width="75px" height="75px" data-src="images/coffee-gray.jpg"></div>
+                <div><img class="under_img1" src="images/coffee-blue.jpg" width="75px" height="75px" data-src="images/coffee-blue.jpg"></div>
+            </div>
+            </aside>
+        <main class="main">
+            <div class="out_div">
+                <ul>
+                    <li> 상품명 : 에디오피아 게뎁</li>
+                    <li class="out_div_ul_li_color">판매가 : 9,000원</li>
+                    <li>배송비 : 3,000원</li>
+                    <li>(50,000원 이상 구매시 무료)</li>
+                    <li>적립금 : 180원(2%)</li>
+                    <li>로스팅 : 2091.06.17</li>
+                </ul>
+            </div>
+            <button type="button">장바구니 담기</button>
+            <div class="xx">상세설명보기</div>
+        </main>
+    </div>
+
+    <script>
+        /*
+            querySelector() : css - id : #, class : .
+
+            getElementById() : 태그 내부에 적용된 id
+            getElementByclassName() : 태그 내부에 적용된 class
+
+            엘리멘트(태그)의 속성값을 변경할 때 : 객체.setAttribue를 사용함. id속성에만 적용되어있다.
+                class 속성에는 setAttribute가 없다.
+        */
+
+        /* DOM 객체를 생성 */
+        // 1. class 속성을 가져와서 변수에 할당
+        /* var vunder_img1=document.querySelector(".under_img1")도 사용 가능 */
+        var vunder_img1=document.getElementsByClassName("under_img1");  // 클릭할 이미지
+        var close_img=document.getElementById("close_img");     // 클릭해서 커질 이미지 배경
+        var close_img_img=document.getElementById("close_img_img");  // 클릭해서 커질 이미지
+        // 2. for 루프를 돌리면서 썸네일을 클릭시 다음 함수를 호출
+        for(var i=0;i<vunder_img1.length;i++){
+            vunder_img1[i].addEventListener("click",thumbnail); //클릭시 thumbnail함수 호출
+        }
+
+        // 3. 썸네일을 클릭시 img 태그의 원본 이미지를 적용하는 함수 , 화면에 출력하는 함수
+        function thumbnail(){
+            var data_src_input=this.getAttribute("src");   // data-src의 값을data_src_input에 삽입
+            
+            close_img_img.setAttribute("src",data_src_input);
+            close_img.style.display="block";
+        }
+
+        // 4. 출력된 화면을 클릭시 다시 원래대로 되돌리는 함수 <== 보류
+        close_img.onclick=function(){
+            close_img.style.display="none";
+        }
+        
+    </script>
+
+
+</body>
+</html>

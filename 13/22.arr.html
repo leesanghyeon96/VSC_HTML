@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert 함수 : 배열의 각 방에 1 ~ 100 까지 자동으로 저장</title>
+</head>
+<body>
+    <script>
+        //insert 함수 : 배열의 각 방에 1 ~ 100 까지 자동으로 저장
+        
+        //1. 함수 밖에서 배열변수 선언
+        var arrdata=[];     // 배열변수 선언
+
+        //insert 후 출력
+        function insertArr(){
+            for( var i = 0; i < 100 ; i++ ){
+                arrdata[i]= i + 1;      // 각 방에 값을 저장
+                document.write(arrdata[i] + " ");   // 값을 insert와 동시에 출력
+            }
+            //출력후 원본 페이지 돌아가도록 태그 삽입
+            document.write("<p/><a href='22.arr.html'>되돌아가기</a>");
+        }
+
+
+        //2의 배수가 아닌 데이터만 삭제
+        function deleteArr(){
+            for(var i = 0 ; i < arrdata.length ; i++ ){
+                if( i % 2 == 0 ){       /* i = 방번호 , [0]=1, [1]=2, ... */
+                    arrdata[i] = 0 ;
+                }
+            }
+            selectArr();        // 방의 값을 삭제후 출력함수 호출
+        }
+        
+
+        function selectArr(){
+            for(var i=0;i<arrdata.length;i++){
+                document.write(arrdata[i] + " ");
+                document.write(arrdata.length);
+            }
+
+            //출력후 원본 페이지 돌아가도록 태그 삽입
+            document.write("<p>홀수번째 데이터 초기화 완료</p>");
+            document.write("<p/><a href='22.arr.html'>되돌아가기</a>");
+        }
+    </script>
+
+
+    <!-- 위의 만든것을 작동시켜야함 -->
+    <!-- onclick시 데이터 호출 -->
+    <button type="button" onclick="insertArr()">배열의 기본내용 출력</button>
+    <button type="button" onclick="deleteArr()">홀수번쨰 데이터 삭제</button>
+</body>
+</html>

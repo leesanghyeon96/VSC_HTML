@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                        *{margin:0px; padding:0px;}
+        body{
+            width:80%;
+            margin:0 auto;
+            border:1px solid black;
+        }
+
+        .aside{
+            width:20%;                  /* aside의 전체 비율 */
+            box-sizing: border-box;
+            border:1px solid black;
+            float:left;
+        }
+
+        .leftbox1{      /* 로그인 박스 */
+            width:100%;
+            box-sizing: border-box;
+            border:1px solid red;
+            background-color:rgb(243, 243, 243);    /* 로그인박스 배경색 */
+            border-radius: 10px;                      /* 박스 테두리 둥글게 */
+        }
+        .login_logo{    /* member login 이미지 */
+            box-sizing: border-box;
+            width:120px;
+            padding:10px;
+        }
+        .textbar{       /* 아이디 비밀번호 입력창 */
+            box-sizing: border-box;
+            width:110px;
+            padding-left: 3px;
+            float:left;
+        }
+        .login_box{     /* 로그인 박스 이미지 */
+            box-sizing: border-box;
+        }
+        .login_member{  /* 회원가입, 아이디/비번찾기 */
+            box-sizing: border-box;
+        }
+
+
+        .leftbox2{
+            width:100%;
+            box-sizing: border-box;
+            border:1px solid red;
+        }
+        .community_box img{
+            box-sizing: border-box;
+            border:1px solid red;
+            position:relative;
+        }
+        .inner_text{
+            box-sizing: border-box;
+            border:1px solid red;
+            position:absolute;
+            top:22%;
+            left:12%;
+            height:150px;
+        }
+
+
+        .leftbox3{
+            width:100%;
+            box-sizing: border-box;
+            border:1px solid gray;
+            border-radius: 10px;
+        }
+        /* aside css 끝 */
+
+        /* main css 시작 */
+        .main{
+            width:78%;
+            float:right;
+            box-sizing: border-box;
+            border:1px solid red;
+        }
+        .table{
+            box-sizing: border-box;
+            width:100%;
+            border-collapse: collapse;
+        }
+        .table th{
+            text-align: center;
+            background-color: rgb(180, 177, 177);  
+        }
+        .td3{
+            text-align: center;
+        }
+        .td4{
+            padding-left: 10px;
+        }
+        .table th,td{
+            padding:3px 0 3px 0;
+        }
+        .last{
+            float:right;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="aside"><!-- aside menu -->
+        <div class="leftbox1">  <!-- 로그인 박스 -->
+            <div class="login_logo"><img src="img/ttl_login.png"></div>
+            <div class="textbar">
+                <div><input type="text" name="id" size="10"></div>
+                <div><input type="password" name="password" size="10"></div>
+            </div>
+            <div class="login_box"><img src="img/btn_login.gif"></div>
+            <div class="login_member">
+                <span><img src="img/btn_join.gif"></span>
+                <span><img src="img/btn_search.gif"></span>
+            </div>
+        </div>
+
+
+        <div class="leftbox2">
+            <div class="community_box">
+                <img src="img/sub_menu_bg.png">
+                <div class="inner_text">
+                    <p>+ 자유 게시판</p>
+                    <p>+ 방명록</p>
+                    <p>+ 공지사항</p>
+                    <p>+ 등업요청</p>
+                    <p>+ 포토갤러리</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="leftbox3">
+            <img src="img/banner1.png">
+            <img src="img/banner2.png">
+            <img src="img/banner3.png">
+        </div>
+    </aside>        <!-- aside 끝 -->
+
+
+    <main class="main">     <!-- main 시작 -->
+        <div><img src="img/comm.gif"></div>     <!-- 커뮤니티 이미지 -->
+        <br>    
+        <div><b>자유 게시판</b></div>
+        <br>
+        <table class="table" border="1">
+            <tr><th colspan="2">글쓰기</th></tr>
+            <tr><td width="30%;" class="td3">이름</td><td class="td4"><textarea name="name" rows="1" cols="10"></textarea></td></tr>
+            <tr><td class="td3">제목</td><td class="td4"><textarea name="name2" rows="1" cols="70"></textarea></td></tr>
+            <tr><td class="td3">내용</td><td class="td4"><textarea name="name3" rows="15" cols="70"></textarea></td></tr>
+            <tr><td class="td3">업로드 파일</td><td class="td4"><textarea nema="name4" rows="1" cols="20"></textarea><span><button>파일선택</button></span><span>선택된 파일 없음</span></td></tr>
+        </table>
+        <div class="last">
+            <span><img src="img/ok.png"></span>
+            <span><img src="img/list.png"></span>
+        </div>
+</body>
+</html>
